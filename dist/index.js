@@ -3,3 +3,9 @@ function openNav(elId) {
 
   nav.classList.toggle('visible');
 }
+
+
+const openNavButton = document.getElementById('button-open-nav');
+openNavButton.addEventListener('click', () => {
+  openNav('nav');
+});
