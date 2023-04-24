@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  font-family: 'Merriweather', serif;
+  --primary-dark: #121212;
+  --text-color: #eee;
+}
+
+.header{
+  background-color: var(--primary-dark);
+  color: var(--text-color);
+}
+
+.nav.visible {
+  display: block;
+}
+
+.nav {
+  width: 100%;
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.question-mark::before {
+  content: '❔';
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 48px;
+  font-style: normal;
+}
