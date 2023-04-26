@@ -1,3 +1,7 @@
+const openNavButton = document.getElementById('button-open-nav');
+const openInteriorNavButton = document.getElementById('button-open-add-task');
+
+
 function openNav(elId) {
   const nav = document.getElementById(elId);
 
@@ -31,12 +35,10 @@ function toggleNav(elId) {
 }
 
 
-const openNavButton = document.getElementById('button-open-nav');
 openNavButton.addEventListener('click', () => {
   toggleNav('nav');
 });
 
-const openInteriorNavButton = document.getElementById('button-open-add-task');
 openInteriorNavButton.addEventListener('click', (e) => {
   toggleNav('add-task');
   e.currentTarget.classList.toggle('rotate');
