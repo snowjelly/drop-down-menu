@@ -29,6 +29,7 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 30px;
 }
 
 .header{
@@ -44,8 +45,12 @@ button {
   min-height: calc(100vh - 104px);
 }
 
-.nav.visible {
+.nav[open], .add-task[open] {
   display: block;
+}
+
+.rotate {
+  transform: rotate(90deg);
 }
 
 .nav {
@@ -73,10 +78,79 @@ span.bars {
   font-size: 48px;
 }
 
+.main {
+  justify-content: space-between;
+}
+
+.interior-menu .button-open-nav .bars {
+  color: var(--primary-dark);
+}
+
+.button-open-add-task, .button-open-add-task .bars {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  color: var(--primary-dark);
+  transition: transform 300ms ease-in-out;
+}
+
+.button-open-add-task {
+  margin: 20px;
+}
+
+.add-task {
+  display: none;
+}
+
+.add-task button {
+  background-color: var(--primary-dark);
+  color: var(--text-color);
+  margin: 0 0 10px 0;
+}
+
+.interior-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-light);
+}
+
+#button-open-interior-nav {
+  display: block;
+}
+
 .button-open-nav {
   padding: 0;
   width: 48px;
   display: none;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @media (max-width: 650px) {
@@ -87,5 +161,9 @@ span.bars {
 
   .button-open-nav {
     display: block;
+  }
+
+  .main {
+    flex-direction: column;
   }
 }
