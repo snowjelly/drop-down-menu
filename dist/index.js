@@ -14,7 +14,16 @@ function toggleNav(elId) {
   const nav = document.getElementById(elId);
 
   if (nav.getAttribute('open') !== null) {
-    closeNav(elId);
+    nav.setAttribute('closing', '');
+
+    nav.addEventListener(
+      'animationend',
+      () => {
+        nav.removeAttribute('closing');
+        closeNav(elId);
+    },
+    { once: true }
+    );
   }
   else if (nav.getAttribute('open') === null) {
     openNav(elId);

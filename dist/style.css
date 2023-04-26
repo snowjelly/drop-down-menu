@@ -102,6 +102,17 @@ span.bars {
   display: none;
 }
 
+.add-task[open] {
+  animation: slide-left 1000ms forwards, fade-in 500ms forwards;
+}
+
+.add-task[closing] {
+  display: block;
+  pointer-events: none;
+  inset: 0;
+  animation: fade-out 1000ms forwards, slide-right 1000ms forwards;
+}
+
 .add-task button {
   background-color: var(--primary-dark);
   color: var(--text-color);
@@ -112,7 +123,6 @@ span.bars {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--secondary-light);
 }
 
 #button-open-interior-nav {
@@ -150,6 +160,24 @@ span.bars {
   }
   100% {
     transform: translateY(0%);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%)
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0%)
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
