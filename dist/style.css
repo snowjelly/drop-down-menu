@@ -96,21 +96,23 @@ span.bars {
 
 .button-open-add-task {
   margin: 20px;
+  justify-self: end;
 }
 
 .add-task {
   display: none;
+  padding: 1rem;
 }
 
 .add-task[open] {
-  animation: slide-left 1000ms forwards, fade-in 500ms forwards;
+  animation: fade-in 500ms forwards;
 }
 
 .add-task[closing] {
   display: block;
   pointer-events: none;
   inset: 0;
-  animation: fade-out 1000ms forwards, slide-right 1000ms forwards;
+  animation: fade-out 500ms forwards, slide-right 500ms forwards;
 }
 
 .add-task button {
@@ -120,9 +122,9 @@ span.bars {
 }
 
 .interior-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
 }
 
 #button-open-interior-nav {
@@ -178,6 +180,15 @@ span.bars {
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0%)
+  }
+  100% {
+    transform: translateY(100%);
   }
 }
 
